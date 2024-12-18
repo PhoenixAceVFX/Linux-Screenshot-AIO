@@ -79,7 +79,7 @@ fi
 get_openbox_tool_choice() {
     saved_choice=$(get_saved_value "Openbox_screenshot_tool")
     if [[ -z "$saved_choice" || ( "$saved_choice" != "Flameshot" && "$saved_choice" != "Scrot" ) ]]; then
-        Openbox_screenshot_tool=$(zenity --list --radiolist --title="Openbox Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Scrot" --width=500 --height=500) || exit 1
+        Openbox_screenshot_tool=$(zenity --list --radiolist --title="Openbox Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Scrot" --width=500 --height=316) || exit 1
         save_value "Openbox_screenshot_tool" "$Openbox_screenshot_tool"
     else
         Openbox_screenshot_tool=$saved_choice
@@ -90,7 +90,7 @@ get_openbox_tool_choice() {
 get_KDE_tool_choice() {
     saved_choice=$(get_saved_value "KDE_screenshot_tool")
     if [[ -z "$saved_choice" || ( "$saved_choice" != "Flameshot" && "$saved_choice" != "Spectacle" ) ]]; then
-        KDE_screenshot_tool=$(zenity --list --radiolist --title="KDE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Spectacle" --width=500 --height=500) || exit 1
+        KDE_screenshot_tool=$(zenity --list --radiolist --title="KDE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Spectacle" --width=500 --height=316) || exit 1
         save_value "KDE_screenshot_tool" "$KDE_screenshot_tool"
     else
         KDE_screenshot_tool=$saved_choice
