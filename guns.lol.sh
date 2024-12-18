@@ -71,7 +71,7 @@ install_dependencies "zenity"
 # Get auth key
 auth=$(get_saved_value "auth")
 if [[ -z "$auth" ]]; then
-    auth=$(zenity --entry --title="Authentication Key" --text="Enter your auth key:" --width=300) || exit 1
+    auth=$(zenity --entry --title="Authentication Key" --text="Enter your auth key:" --width=500) || exit 1
     save_value "auth" "$auth"
 fi
 
@@ -79,7 +79,7 @@ fi
 get_openbox_tool_choice() {
     saved_choice=$(get_saved_value "Openbox_screenshot_tool")
     if [[ -z "$saved_choice" || ( "$saved_choice" != "Flameshot" && "$saved_choice" != "Scrot" ) ]]; then
-        Openbox_screenshot_tool=$(zenity --list --radiolist --title="Openbox Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Scrot" --width=500 --height=300) || exit 1
+        Openbox_screenshot_tool=$(zenity --list --radiolist --title="Openbox Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Scrot" --width=500 --height=500) || exit 1
         save_value "Openbox_screenshot_tool" "$Openbox_screenshot_tool"
     else
         Openbox_screenshot_tool=$saved_choice
@@ -90,7 +90,7 @@ get_openbox_tool_choice() {
 get_KDE_tool_choice() {
     saved_choice=$(get_saved_value "KDE_screenshot_tool")
     if [[ -z "$saved_choice" || ( "$saved_choice" != "Flameshot" && "$saved_choice" != "Spectacle" ) ]]; then
-        KDE_screenshot_tool=$(zenity --list --radiolist --title="KDE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Spectacle" --width=500 --height=300) || exit 1
+        KDE_screenshot_tool=$(zenity --list --radiolist --title="KDE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Spectacle" --width=500 --height=500) || exit 1
         save_value "KDE_screenshot_tool" "$KDE_screenshot_tool"
     else
         KDE_screenshot_tool=$saved_choice
@@ -143,17 +143,16 @@ fi
 # Copy url to clipboard
 echo -n "$image_url" | xclip -selection clipboard
 
-# Modify clipboard contents by replacing "guns.lol" with "guns.website.com"
-#clipboard_content=$(xclip -selection clipboard -o)
-# Example is s/guns.lol/guns.website.com/g
-#modified_content=$(echo "$clipboard_content" | sed 's/guns.lol/guns.website.com/g')
+# Modify clipboard contents by replacing "xvids.lol" with "guns.neverlos.ing"
+clipboard_content=$(xclip -selection clipboard -o)
+modified_content=$(echo "$clipboard_content" | sed 's/xvids.lol/guns.neverlos.ing/g')
 
 # Set the modified content back to the clipboard
-#echo -n "$modified_content" | xclip -selection clipboard
+echo -n "$modified_content" | xclip -selection clipboard
 
 # Final alert, swap these IF you are using a custom url
-# notify-send "Image URL copied to clipboard" "$modified_content" -a "Screenshot Script" -i "$temp_file"
-notify-send "Image URL copied to clipboard" "$image_url" -a "Screenshot Script" -i "$temp_file"
+notify-send "Image URL copied to clipboard" "$modified_content" -a "Screenshot Script" -i "$temp_file"
+# notify-send "Image URL copied to clipboard" "$image_url" -a "Screenshot Script" -i "$temp_file"
 
 # Clean up temporary files
 rm -f "$temp_file" "$response_file"
