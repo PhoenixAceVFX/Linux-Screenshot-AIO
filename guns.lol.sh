@@ -153,7 +153,7 @@ echo -n "$image_url" | xclip -selection clipboard
 
 # Final alert, swap these IF you are using a custom url
 # notify-send "Image URL copied to clipboard" "$modified_content" -a "Screenshot Script" -i "$temp_file"
-notify-send "Image URL copied to clipboard" "$modified_content" -a "Screenshot Script" -i "$temp_file"
+notify-send "Image URL copied to clipboard" "$image_url" -a "Screenshot Script" -i "$temp_file"
 
 # Clean up temporary files
 rm -f "$temp_file" "$response_file"
