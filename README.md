@@ -9,6 +9,9 @@ If you want to you can open an issue with the api url and the "auth" identifier
 # Launch Arguments  
 To change your settings or your auth/api key run the script with `-c`  
 
+# REMEMBER TO CHMOD!!!  
+If you want to keybind this remember to do `chmod +x` to it!!  
+
 # Supported Distros  
 ### Distros based on these *can* work but are not guarnteed
 - Arch  
