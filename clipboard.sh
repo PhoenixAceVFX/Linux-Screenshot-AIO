@@ -2,7 +2,7 @@
 
 # Main script variables
 temp_file="/tmp/screenshot.png"
-settings_file="$HOME/.config/guns/settings.json"
+settings_file="$HOME/.config/clipboard.sh/settings.json"
 
 # Helper functions
 get_saved_value() {
