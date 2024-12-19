@@ -12,6 +12,10 @@ To change your settings or your auth/api key run the script with `-c`
 # REMEMBER TO CHMOD!!!  
 If you want to keybind this remember to do `chmod +x` to it!!  
 
+# SCRIPT USE  
+clipboard.sh - copies to clipboard  
+guns.lol.sh - for guns.lol  
+
 # Supported Distros  
 ### Distros based on these *can* work but are not guarnteed
 - Arch  
