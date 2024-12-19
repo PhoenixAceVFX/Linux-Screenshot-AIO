@@ -1,7 +1,7 @@
 Complex scripts that have a wide spectrum of support for image uploading  
 Issues can be used to request more support or to report issues/bugs  
 
-# DO YOU WANT TO USE THIS ON YOUR HOST?!  
+# DO YOU WANT TO USE THIS?!  
 Go right ahead! It's BSD-2 so all I ask is that you credit me :D  
 If you want to you can open an issue with the api url and the "auth" identifier  
 - Doing this is considered requesting me to add a version on here for your host  
