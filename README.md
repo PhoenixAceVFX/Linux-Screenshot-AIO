@@ -6,6 +6,10 @@ Go right ahead! It's BSD-2 so all I ask is that you credit me :D
 If you want to you can open an issue with the api url and the "auth" identifier  
 - Doing this is considered requesting me to add a version on here for your host  
 
+# SETUP  
+Run the script from your COMMAND LINE first  
+- Also do this if it does nothing, it needs to install deps over CLI  
+
 # Launch Arguments  
 To change your settings or your auth/api key run the script with `-c`  
 
