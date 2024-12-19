@@ -77,7 +77,7 @@ fi
 
 # Handle screenshots based on the desktop environment
 case "$desktop_env" in
-    *"hyprland"*|*"i3"*)
+    *"sway"*|*"hyprland"*|*"i3"*)
         install_dependencies "grimblast"
         grimblast save area "$temp_file"
         ;;
