@@ -69,7 +69,13 @@ case "$desktop_env" in
         ;;
     *"kde"*)
         install_dependencies "flameshot" "spectacle"
-        tool=$(zenity --list --radiolist --title="KDE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE Flameshot FALSE Spectacle --width=500 --height=316) || exit 1
+        saved_tool=$(get_saved_value "kde_tool")
+        if [[ -z "$saved_tool" ]]; then
+            tool=$(zenity --list --radiolist --title="KDE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE Flameshot FALSE Spectacle --width=500 --height=316) || exit 1
+            save_value "kde_tool" "$tool"
+        else
+            tool="$saved_tool"
+        fi
         if [[ "$tool" == "Flameshot" ]]; then
             flameshot gui -p "$temp_file"
         else
@@ -78,7 +84,13 @@ case "$desktop_env" in
         ;;
     *"xfce"*)
         install_dependencies "xfce4-screenshooter" "flameshot"
-        tool=$(zenity --list --radiolist --title="XFCE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE XFCE4-Screenshooter FALSE Flameshot --width=500 --height=316) || exit 1
+        saved_tool=$(get_saved_value "xfce_tool")
+        if [[ -z "$saved_tool" ]]; then
+            tool=$(zenity --list --radiolist --title="XFCE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE XFCE4-Screenshooter FALSE Flameshot --width=500 --height=316) || exit 1
+            save_value "xfce_tool" "$tool"
+        else
+            tool="$saved_tool"
+        fi
         if [[ "$tool" == "XFCE4-Screenshooter" ]]; then
             xfce4-screenshooter -r -s "$temp_file"
         else
@@ -87,7 +99,13 @@ case "$desktop_env" in
         ;;
     *"gnome"*)
         install_dependencies "gnome-screenshot" "flameshot"
-        tool=$(zenity --list --radiolist --title="GNOME Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE GNOME-Screenshot FALSE Flameshot --width=500 --height=316) || exit 1
+        saved_tool=$(get_saved_value "gnome_tool")
+        if [[ -z "$saved_tool" ]]; then
+            tool=$(zenity --list --radiolist --title="GNOME Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE GNOME-Screenshot FALSE Flameshot --width=500 --height=316) || exit 1
+            save_value "gnome_tool" "$tool"
+        else
+            tool="$saved_tool"
+        fi
         if [[ "$tool" == "GNOME-Screenshot" ]]; then
             gnome-screenshot -a -f "$temp_file"
         else
@@ -96,7 +114,13 @@ case "$desktop_env" in
         ;;
     *"cinnamon"*)
         install_dependencies "gnome-screenshot" "flameshot"
-        tool=$(zenity --list --radiolist --title="Cinnamon Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE GNOME-Screenshot FALSE Flameshot --width=500 --height=316) || exit 1
+        saved_tool=$(get_saved_value "cinnamon_tool")
+        if [[ -z "$saved_tool" ]]; then
+            tool=$(zenity --list --radiolist --title="Cinnamon Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE GNOME-Screenshot FALSE Flameshot --width=500 --height=316) || exit 1
+            save_value "cinnamon_tool" "$tool"
+        else
+            tool="$saved_tool"
+        fi
         if [[ "$tool" == "GNOME-Screenshot" ]]; then
             gnome-screenshot -a -f "$temp_file"
         else
@@ -109,7 +133,13 @@ case "$desktop_env" in
         ;;
     *"mate"*)
         install_dependencies "mate-screenshot" "flameshot"
-        tool=$(zenity --list --radiolist --title="MATE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE MATE-Screenshot FALSE Flameshot --width=500 --height=316) || exit 1
+        saved_tool=$(get_saved_value "mate_tool")
+        if [[ -z "$saved_tool" ]]; then
+            tool=$(zenity --list --radiolist --title="MATE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE MATE-Screenshot FALSE Flameshot --width=500 --height=316) || exit 1
+            save_value "mate_tool" "$tool"
+        else
+            tool="$saved_tool"
+        fi
         if [[ "$tool" == "MATE-Screenshot" ]]; then
             mate-screenshot -a -f "$temp_file"
         else
