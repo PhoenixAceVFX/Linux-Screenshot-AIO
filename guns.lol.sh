@@ -75,25 +75,22 @@ if [[ -z "$auth" ]]; then
     save_value "auth" "$auth"
 fi
 
-# Openbox screenshot tool selection
-get_openbox_tool_choice() {
-    saved_choice=$(get_saved_value "Openbox_screenshot_tool")
-    if [[ -z "$saved_choice" || ( "$saved_choice" != "Flameshot" && "$saved_choice" != "Scrot" ) ]]; then
-        Openbox_screenshot_tool=$(zenity --list --radiolist --title="Openbox Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Scrot" --width=500 --height=316) || exit 1
-        save_value "Openbox_screenshot_tool" "$Openbox_screenshot_tool"
+# Screenshot tool selection for various environments
+get_tool_choice() {
+    local env_name="$1"
+    local tools=(${@:2})
+    local saved_choice=$(get_saved_value "${env_name}_screenshot_tool")
+    
+    if [[ -z "$saved_choice" || ! " ${tools[@]} " =~ " ${saved_choice} " ]]; then
+        local tool_options=""
+        for tool in "${tools[@]}"; do
+            tool_options+="FALSE $tool "
+        done
+        local chosen_tool=$(zenity --list --radiolist --title="${env_name} Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE ${tool_options} --width=500 --height=316) || exit 1
+        save_value "${env_name}_screenshot_tool" "$chosen_tool"
+        echo "$chosen_tool"
     else
-        Openbox_screenshot_tool=$saved_choice
-    fi
-}
-
-# Screenshot tool selection for KDE
-get_KDE_tool_choice() {
-    saved_choice=$(get_saved_value "KDE_screenshot_tool")
-    if [[ -z "$saved_choice" || ( "$saved_choice" != "Flameshot" && "$saved_choice" != "Spectacle" ) ]]; then
-        KDE_screenshot_tool=$(zenity --list --radiolist --title="KDE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE "Flameshot" FALSE "Spectacle" --width=500 --height=316) || exit 1
-        save_value "KDE_screenshot_tool" "$KDE_screenshot_tool"
-    else
-        KDE_screenshot_tool=$saved_choice
+        echo "$saved_choice"
     fi
 }
 
@@ -101,8 +98,8 @@ get_KDE_tool_choice() {
 case "$desktop_env" in
     *"kde"*)
         install_dependencies "flameshot" "spectacle"
-        get_KDE_tool_choice
-        if [[ "$KDE_screenshot_tool" == "Flameshot" ]]; then
+        tool=$(get_tool_choice "KDE" "Flameshot" "Spectacle")
+        if [[ "$tool" == "Flameshot" ]]; then
             flameshot gui -p "$temp_file"
         else
             spectacle --region --background --nonotify --output "$temp_file"
@@ -110,14 +107,62 @@ case "$desktop_env" in
         ;;
     *"openbox"*)
         install_dependencies "scrot" "flameshot"
-        get_openbox_tool_choice
-        if [[ "$Openbox_screenshot_tool" == "Flameshot" ]]; then
+        tool=$(get_tool_choice "Openbox" "Flameshot" "Scrot")
+        if [[ "$tool" == "Flameshot" ]]; then
             flameshot gui -p "$temp_file"
         else
             scrot "$temp_file"
         fi
         ;;
-    # Add other environments here as needed
+    *"hyprland"*|*"i3"*)
+        install_dependencies "grim" "flameshot"
+        tool=$(get_tool_choice "Tiling_WM" "Grim" "Flameshot")
+        if [[ "$tool" == "Grim" ]]; then
+            grim "$temp_file"
+        else
+            flameshot gui -p "$temp_file"
+        fi
+        ;;
+    *"xfce"*)
+        install_dependencies "xfce4-screenshooter" "flameshot"
+        tool=$(get_tool_choice "XFCE" "XFCE4-Screenshooter" "Flameshot")
+        if [[ "$tool" == "XFCE4-Screenshooter" ]]; then
+            xfce4-screenshooter -r -s "$temp_file"
+        else
+            flameshot gui -p "$temp_file"
+        fi
+        ;;
+    *"gnome"*)
+        install_dependencies "gnome-screenshot" "flameshot"
+        tool=$(get_tool_choice "GNOME" "GNOME-Screenshot" "Flameshot")
+        if [[ "$tool" == "GNOME-Screenshot" ]]; then
+            gnome-screenshot -a -f "$temp_file"
+        else
+            flameshot gui -p "$temp_file"
+        fi
+        ;;
+    *"cinnamon"*)
+        install_dependencies "gnome-screenshot" "flameshot"
+        tool=$(get_tool_choice "Cinnamon" "GNOME-Screenshot" "Flameshot")
+        if [[ "$tool" == "GNOME-Screenshot" ]]; then
+            gnome-screenshot -a -f "$temp_file"
+        else
+            flameshot gui -p "$temp_file"
+        fi
+        ;;
+    *"deepin"*)
+        install_dependencies "deepin-screenshot"
+        deepin-screenshot -s "$temp_file"
+        ;;
+    *"mate"*)
+        install_dependencies "mate-screenshot" "flameshot"
+        tool=$(get_tool_choice "MATE" "MATE-Screenshot" "Flameshot")
+        if [[ "$tool" == "MATE-Screenshot" ]]; then
+            mate-screenshot -a -f "$temp_file"
+        else
+            flameshot gui -p "$temp_file"
+        fi
+        ;;
     *)
         notify-send "Error" "Unsupported desktop environment: $desktop_env" -a "Screenshot Script"
         exit 1
@@ -143,16 +188,16 @@ fi
 # Copy url to clipboard
 echo -n "$image_url" | xclip -selection clipboard
 
-# Modify clipboard contents by replacing "xvids.lol" with "guns.neverlos.ing"
-clipboard_content=$(xclip -selection clipboard -o)
-modified_content=$(echo "$clipboard_content" | sed 's/xvids.lol/guns.neverlos.ing/g')
+# Modify clipboard contents by replacing "guns.lol" with "guns.website.com"
+# clipboard_content=$(xclip -selection clipboard -o)
+# modified_content=$(echo "$clipboard_content" | sed 's/guns.lol/guns.website.com/g')
 
-# Set the modified content back to the clipboard
-echo -n "$modified_content" | xclip -selection clipboard
+# Set the modified content back to the clipboard, uncomment if using custom url
+# echo -n "$modified_content" | xclip -selection clipboard
 
 # Final alert, swap these IF you are using a custom url
-notify-send "Image URL copied to clipboard" "$modified_content" -a "Screenshot Script" -i "$temp_file"
-# notify-send "Image URL copied to clipboard" "$image_url" -a "Screenshot Script" -i "$temp_file"
+# notify-send "Image URL copied to clipboard" "$modified_content" -a "Screenshot Script" -i "$temp_file"
+notify-send "Image URL copied to clipboard" "$image_url" -a "Screenshot Script" -i "$temp_file"
 
 # Clean up temporary files
 rm -f "$temp_file" "$response_file"
