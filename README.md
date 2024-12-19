@@ -40,7 +40,8 @@ guns.lol.sh - for guns.lol
 - Deepin
 - Cinnamon
 - Openbox
-- MATE  
+- MATE
+- Sway
 
 # Custom URL Support  
 This is manually done and setting it up is on you  
