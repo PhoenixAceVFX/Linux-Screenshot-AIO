@@ -79,7 +79,9 @@ while getopts "c" opt; do
 done
 
 # Ensure Zenity is installed
-install_dependencies "zenity jq xclip"
+install_dependencies "zenity"
+install_dependencies "jq"
+install_dependencies "xclip"
 
 # Get auth key
 auth=$(get_saved_value "auth")
