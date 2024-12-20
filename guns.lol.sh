@@ -79,7 +79,7 @@ while getopts "c" opt; do
 done
 
 # Ensure Zenity is installed
-install_dependencies "zenity jq"
+install_dependencies "zenity jq xclip"
 
 # Get auth key
 auth=$(get_saved_value "auth")
@@ -186,7 +186,7 @@ if [[ -z "$image_url" || "$image_url" == "null" ]]; then
 fi
 
 # Copy url to clipboard
-echo -n "$image_url" | xclip -selection clipboard
+echo -n "$image_url" |  -selection clipboard
 
 # Modify clipboard contents by replacing "guns.lol" with "guns.website.com"
 # clipboard_content=$(xclip -selection clipboard -o)
