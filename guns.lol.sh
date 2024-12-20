@@ -62,7 +62,7 @@ distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"')
 desktop_env=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
 
 case "$distro" in
-    *"Arch"*) package_manager="arch" ;;
+    *"Arch"*|*"EndeavourOS"*) package_manager="arch" ;;
     *"Debian"*) package_manager="debian" ;;
     *"Fedora"*) package_manager="fedora" ;;
     *"NixOS"*) package_manager="nixos" ;;
