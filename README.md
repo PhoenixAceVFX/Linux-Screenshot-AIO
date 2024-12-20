@@ -30,6 +30,7 @@ guns.lol.sh - for guns.lol
 - NixOS
 - Void
 - Bedrock
+- EndeavourOS
 
 # Supported Desktop Environment  
 - KDE Plasma  
