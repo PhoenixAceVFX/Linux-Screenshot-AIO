@@ -72,7 +72,7 @@ case "$distro" in
 esac
 
 # Ensure Zenity is installed
-install_dependencies "zenity jq"
+install_dependencies "zenity jq xclip"
 
 # Handle screenshots based on the desktop environment
 case "$desktop_env" in
