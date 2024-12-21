@@ -22,17 +22,17 @@ If you want to keybind this remember to do `chmod +x` to it!!
 clipboard.sh - copies to clipboard  
 guns.lol.sh - for guns.lol  
 
-# Supported Base Distros  
-### Distros based on these *should* work but are not guarnteed
-- Arch
-- Debian
-- Fedora
-- NixOS
-- Gentoo
-- OpenSUSE
-- Void
-- Bedrock
-- Slackware
+# Supported Package Managers  
+### These are all the common package managers  
+- Pacman
+- Apt
+- DNF
+- Nix-Env
+- Emerge
+- Zypper
+- XBPS-Install
+- Yay
+- Paru
 
 # Supported Desktop Environment  
 - KDE Plasma  
