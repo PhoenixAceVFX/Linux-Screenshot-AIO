@@ -59,17 +59,56 @@ install_dependencies() {
 distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"')
 desktop_env=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
 
+# Detect distro and desktop environment
+distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"')
+desktop_env=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
+
 case "$distro" in
-    *"Arch"*|*"EndeavourOS"*|*"garuda"*|*"manjaro"*|*"Arco"*|*"Artix"*) package_manager="arch" ;;
-    *"Debian"*|*"Ubunutu"*|*"Wubuntu"*|*"Kubuntu"*|*"Deepin"*|*"neon"*) package_manager="debian" ;;
-    *"Fedora"*|*"Nobara"*|*"Ultramarine"*|*"RisiOS"*) package_manager="fedora" ;;
-    *"NixOS"*) package_manager="nixos" ;;
-    *"Gentoo"*) package_manager="gentoo" ;;
-    *"openSUSE"*) package_manager="opensuse" ;;
-    *"Void"*) package_manager="void" ;;
-    *"Bedrock"*) package_manager="bedrock" ;;
-    *) echo "Unsupported distribution: $distro"; exit 1 ;;
+    # Arch-based distributions
+    *"arch"*|*"endeavouros"*|*"garuda"*|*"manjaro"*|*"arco"*|*"artix"*|*"chakra"*|*"parabola"*|*"archcraft"*|*"archlabs"*|*"archman"*|*"blackarch"*) 
+        package_manager="arch" ;;
+    
+    # Debian-based distributions
+    *"debian"*|*"ubuntu"*|*"kubuntu"*|*"xubuntu"*|*"lubuntu"*|*"pop!_os"*|*"linux mint"*|*"zorin"*|*"elementary"*|*"deepin"*|*"neon"*|*"devuan"*|*"parrot"*|*"kali"*|*"pureos"*|*"tails"*|*"q4os"*|*"endless os"*|*"siduction"*|*"raspbian"*|*"mx linux"*) 
+        package_manager="debian" ;;
+    
+    # Fedora-based distributions
+    *"fedora"*|*"nobara"*|*"ultramarine"*|*"risios"*|*"korora"*|*"clearos"*|*"red hat enterprise linux"*|*"centos"*|*"rocky linux"*|*"almalinux"*) 
+        package_manager="fedora" ;;
+    
+    # Nix-based distributions
+    *"nixos"*|*"guix"* ) 
+        package_manager="nixos" ;;
+    
+    # Gentoo-based distributions
+    *"gentoo"*|*"calculate linux"*|*"sabayon"*|*"funtoo"*|*"redcore"*) 
+        package_manager="gentoo" ;;
+    
+    # openSUSE-based distributions
+    *"opensuse"*|*"gecko"*|*"openqa"*) 
+        package_manager="opensuse" ;;
+    
+    # Void Linux
+    *"void"*|*"adelie"* ) 
+        package_manager="void" ;;
+    
+    # Bedrock Linux
+    *"bedrock"* ) 
+        package_manager="bedrock" ;;
+    
+    # Slackware-based distributions
+    *"slackware"*|*"salix"*|*"slax"*|*"absolute"*|*"zenwalk"* ) 
+        package_manager="slackware" ;;
+    
+    # Independent distributions
+    *"clear linux"*|*"solus"*|*"alpine linux"*|*"hyperbola"*|*"postmarketos"*|*"exherbo"*|*"gobo linux"*|*"linux from scratch"*|*"dahlia"* ) 
+        echo "Unsupported distribution: $distro this script will not function, open an issue on the github to request support"; exit 1 ;;
+    
+    # Fallback for unsupported distributions
+    *) 
+        echo "Unsupported distribution: $distro"; exit 1 ;;
 esac
+
 
 # Ensure Zenity is installed
 install_dependencies "zenity"
