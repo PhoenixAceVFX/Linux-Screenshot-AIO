@@ -1,17 +1,17 @@
-# ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓███████▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░       ░▒▓█▓▒▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██████▓▒░ ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░      ░▒▓██████▓▒░  ░▒▓█▓▒▒▓█▓▒░░▒▓██████▓▒░  ░▒▓██████▓▒░  
-# ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░        ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░  ░▒▓██▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░      ░▒▓███████▓▒░  
-# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓████████▓▒░░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
-# ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓███████▓▒░  
+# ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓███████▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░       ░▒▓█▓▒▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██████▓▒░ ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░      ░▒▓██████▓▒░  ░▒▓█▓▒▒▓█▓▒░░▒▓██████▓▒░  ░▒▓██████▓▒░
+# ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░        ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░  ░▒▓██▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░      ░▒▓███████▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓████████▓▒░░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+# ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓███████▓▒░
 # Script by PhoenixAceVFX
 # Licensed under GPL-2.0
 
@@ -22,7 +22,51 @@ temp_file="/tmp/screenshot.png"
 settings_file="$HOME/.config/clipboard.sh/settings.json"
 
 # Helper functions
-get_saved_value() {
+get_saved_value() {case "$distro" in
+    # Arch-based distributions
+    *"arch"*|*"Arch Linux"*|*"EndeavourOS"*|*"Garuda"*|*"Manjaro"*|*"Arco"*|*"Artix"*|*"Chakra"*|*"Parabola"*|*"Archcraft"*|*"Archlabs"*|*"Archman"*|*"Blackarch"*)
+        package_manager="arch" ;;
+
+    # Debian-based distributions
+    *"Debian"*|*"Ubuntu"*|*"Kubuntu"*|*"Xubuntu"*|*"Lubuntu"*|*"Pop!_OS"*|*"Linux Mint"*|*"Zorin"*|*"Elementary"*|*"Deepin"*|*"Neon"*|*"Devuan"*|*"Parrot"*|*"Kali"*|*"PureOS"*|*"Tails"*|*"Q4OS"*|*"Endless OS"*|*"Siduction"*|*"Raspbian"*|*"MX Linux"*)
+        package_manager="debian" ;;
+
+    # Fedora-based distributions
+    *"Fedora"*|*"Nobara"*|*"Ultramarine"*|*"RisiOS"*|*"Korora"*|*"ClearOS"*|*"Red Hat Enterprise Linux"*|*"CentOS"*|*"Rocky Linux"*|*"AlmaLinux"*)
+        package_manager="fedora" ;;
+
+    # Nix-based distributions
+    *"NixOS"*|*"Guix"* )
+        package_manager="nixos" ;;
+
+    # Gentoo-based distributions
+    *"Gentoo"*|*"Calculate Linux"*|*"Sabayon"*|*"Funtoo"*|*"Redcore"*)
+        package_manager="gentoo" ;;
+
+    # openSUSE-based distributions
+    *"Opensuse"*|*"Gecko"*|*"Openqa"*)
+        package_manager="opensuse" ;;
+
+    # Void Linux
+    *"Void"*|*"Adelie"* )
+        package_manager="void" ;;
+
+    # Bedrock Linux
+    *"Bedrock"* )
+        package_manager="bedrock" ;;
+
+    # Slackware-based distributions
+    *"Slackware"*|*"Salix"*|*"Slax"*|*"Absolute"*|*"Zenwalk"* )
+        package_manager="slackware" ;;
+
+    # Independent distributions
+    *"Clear Linux"*|*"Solus"*|*"Alpine Linux"*|*"Hyperbola"*|*"Postmarketos"*|*"Exherbo"*|*"Gobo Linux"*|*"Linux From Scratch"*|*"Dahlia"* )
+        echo "Unsupported distribution: $distro this script will not function, open an issue on the github to request support"; exit 1 ;;
+
+    # Fallback for unsupported distributions
+    *)
+        echo "Unsupported distribution: $distro"; exit 1 ;;
+esac
     [[ -f "$settings_file" ]] && jq -r ".$1" "$settings_file" || echo ""
 }
 
@@ -69,47 +113,47 @@ desktop_env=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
 
 case "$distro" in
     # Arch-based distributions
-    *"arch"*|*"endeavouros"*|*"garuda"*|*"manjaro"*|*"arco"*|*"artix"*|*"chakra"*|*"parabola"*|*"archcraft"*|*"archlabs"*|*"archman"*|*"blackarch"*) 
+    *"arch"*|*"Arch Linux"*|*"EndeavourOS"*|*"Garuda"*|*"Manjaro"*|*"Arco"*|*"Artix"*|*"Chakra"*|*"Parabola"*|*"Archcraft"*|*"Archlabs"*|*"Archman"*|*"Blackarch"*)
         package_manager="arch" ;;
-    
+
     # Debian-based distributions
-    *"debian"*|*"ubuntu"*|*"kubuntu"*|*"xubuntu"*|*"lubuntu"*|*"pop!_os"*|*"linux mint"*|*"zorin"*|*"elementary"*|*"deepin"*|*"neon"*|*"devuan"*|*"parrot"*|*"kali"*|*"pureos"*|*"tails"*|*"q4os"*|*"endless os"*|*"siduction"*|*"raspbian"*|*"mx linux"*) 
+    *"Debian"*|*"Ubuntu"*|*"Kubuntu"*|*"Xubuntu"*|*"Lubuntu"*|*"Pop!_OS"*|*"Linux Mint"*|*"Zorin"*|*"Elementary"*|*"Deepin"*|*"Neon"*|*"Devuan"*|*"Parrot"*|*"Kali"*|*"PureOS"*|*"Tails"*|*"Q4OS"*|*"Endless OS"*|*"Siduction"*|*"Raspbian"*|*"MX Linux"*)
         package_manager="debian" ;;
-    
+
     # Fedora-based distributions
-    *"fedora"*|*"nobara"*|*"ultramarine"*|*"risios"*|*"korora"*|*"clearos"*|*"red hat enterprise linux"*|*"centos"*|*"rocky linux"*|*"almalinux"*) 
+    *"Fedora"*|*"Nobara"*|*"Ultramarine"*|*"RisiOS"*|*"Korora"*|*"ClearOS"*|*"Red Hat Enterprise Linux"*|*"CentOS"*|*"Rocky Linux"*|*"AlmaLinux"*)
         package_manager="fedora" ;;
-    
+
     # Nix-based distributions
-    *"nixos"*|*"guix"* ) 
+    *"NixOS"*|*"Guix"* )
         package_manager="nixos" ;;
-    
+
     # Gentoo-based distributions
-    *"gentoo"*|*"calculate linux"*|*"sabayon"*|*"funtoo"*|*"redcore"*) 
+    *"Gentoo"*|*"Calculate Linux"*|*"Sabayon"*|*"Funtoo"*|*"Redcore"*)
         package_manager="gentoo" ;;
-    
+
     # openSUSE-based distributions
-    *"opensuse"*|*"gecko"*|*"openqa"*) 
+    *"Opensuse"*|*"Gecko"*|*"Openqa"*)
         package_manager="opensuse" ;;
-    
+
     # Void Linux
-    *"void"*|*"adelie"* ) 
+    *"Void"*|*"Adelie"* )
         package_manager="void" ;;
-    
+
     # Bedrock Linux
-    *"bedrock"* ) 
+    *"Bedrock"* )
         package_manager="bedrock" ;;
-    
+
     # Slackware-based distributions
-    *"slackware"*|*"salix"*|*"slax"*|*"absolute"*|*"zenwalk"* ) 
+    *"Slackware"*|*"Salix"*|*"Slax"*|*"Absolute"*|*"Zenwalk"* )
         package_manager="slackware" ;;
-    
+
     # Independent distributions
-    *"clear linux"*|*"solus"*|*"alpine linux"*|*"hyperbola"*|*"postmarketos"*|*"exherbo"*|*"gobo linux"*|*"linux from scratch"*|*"dahlia"* ) 
+    *"Clear Linux"*|*"Solus"*|*"Alpine Linux"*|*"Hyperbola"*|*"Postmarketos"*|*"Exherbo"*|*"Gobo Linux"*|*"Linux From Scratch"*|*"Dahlia"* )
         echo "Unsupported distribution: $distro this script will not function, open an issue on the github to request support"; exit 1 ;;
-    
+
     # Fallback for unsupported distributions
-    *) 
+    *)
         echo "Unsupported distribution: $distro"; exit 1 ;;
 esac
 
@@ -142,7 +186,7 @@ case "$desktop_env" in
         ;;
     *"xfce"*)
         install_dependencies "xfce4-screenshooter" "flameshot"
-        saved_tool=$(get_saved_value "xfce_tool")
+		saved_tool=$(get_saved_value "xfce_tool")
         if [[ -z "$saved_tool" ]]; then
             tool=$(zenity --list --radiolist --title="XFCE Screenshot Tool" --text="Choose your preferred screenshot tool:" --column="" --column="Tool" TRUE XFCE4-Screenshooter FALSE Flameshot --width=500 --height=316) || exit 1
             save_value "xfce_tool" "$tool"
