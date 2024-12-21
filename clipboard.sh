@@ -22,51 +22,7 @@ temp_file="/tmp/screenshot.png"
 settings_file="$HOME/.config/clipboard.sh/settings.json"
 
 # Helper functions
-get_saved_value() {case "$distro" in
-    # Arch-based distributions
-    *"arch"*|*"Arch Linux"*|*"EndeavourOS"*|*"Garuda"*|*"Manjaro"*|*"Arco"*|*"Artix"*|*"Chakra"*|*"Parabola"*|*"Archcraft"*|*"Archlabs"*|*"Archman"*|*"Blackarch"*)
-        package_manager="arch" ;;
-
-    # Debian-based distributions
-    *"Debian"*|*"Ubuntu"*|*"Kubuntu"*|*"Xubuntu"*|*"Lubuntu"*|*"Pop!_OS"*|*"Linux Mint"*|*"Zorin"*|*"Elementary"*|*"Deepin"*|*"Neon"*|*"Devuan"*|*"Parrot"*|*"Kali"*|*"PureOS"*|*"Tails"*|*"Q4OS"*|*"Endless OS"*|*"Siduction"*|*"Raspbian"*|*"MX Linux"*)
-        package_manager="debian" ;;
-
-    # Fedora-based distributions
-    *"Fedora"*|*"Nobara"*|*"Ultramarine"*|*"RisiOS"*|*"Korora"*|*"ClearOS"*|*"Red Hat Enterprise Linux"*|*"CentOS"*|*"Rocky Linux"*|*"AlmaLinux"*)
-        package_manager="fedora" ;;
-
-    # Nix-based distributions
-    *"NixOS"*|*"Guix"* )
-        package_manager="nixos" ;;
-
-    # Gentoo-based distributions
-    *"Gentoo"*|*"Calculate Linux"*|*"Sabayon"*|*"Funtoo"*|*"Redcore"*)
-        package_manager="gentoo" ;;
-
-    # openSUSE-based distributions
-    *"Opensuse"*|*"Gecko"*|*"Openqa"*)
-        package_manager="opensuse" ;;
-
-    # Void Linux
-    *"Void"*|*"Adelie"* )
-        package_manager="void" ;;
-
-    # Bedrock Linux
-    *"Bedrock"* )
-        package_manager="bedrock" ;;
-
-    # Slackware-based distributions
-    *"Slackware"*|*"Salix"*|*"Slax"*|*"Absolute"*|*"Zenwalk"* )
-        package_manager="slackware" ;;
-
-    # Independent distributions
-    *"Clear Linux"*|*"Solus"*|*"Alpine Linux"*|*"Hyperbola"*|*"Postmarketos"*|*"Exherbo"*|*"Gobo Linux"*|*"Linux From Scratch"*|*"Dahlia"* )
-        echo "Unsupported distribution: $distro this script will not function, open an issue on the github to request support"; exit 1 ;;
-
-    # Fallback for unsupported distributions
-    *)
-        echo "Unsupported distribution: $distro"; exit 1 ;;
-esac
+get_saved_value() {
     [[ -f "$settings_file" ]] && jq -r ".$1" "$settings_file" || echo ""
 }
 
