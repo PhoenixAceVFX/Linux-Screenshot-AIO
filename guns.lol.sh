@@ -219,7 +219,7 @@ if [[ -z "$image_url" || "$image_url" == "null" ]]; then
 fi
 
 # Copy url to clipboard
-echo -n "$image_url" |  -selection clipboard
+echo -n "$image_url" | xclip -selection clipboard
 
 # Modify clipboard contents by replacing "guns.lol" with "guns.website.com"
 # clipboard_content=$(xclip -selection clipboard -o)
