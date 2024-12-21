@@ -12,10 +12,7 @@
 # ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░ 
 # ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓███████▓▒░  
 # Script by PhoenixAceVFX
-# Licensed under BSD-2
-# You are allowed to include this script in your dotfiles
-# You are allowed to use this script on your file hosts
-# Crediting is required as is the same licensing
+# Licensed under GPL-2.0
 
 #!/bin/bash -e
 
