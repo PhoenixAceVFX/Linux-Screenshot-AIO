@@ -31,6 +31,18 @@ guns.lol.sh - for guns.lol
 - Void
 - Bedrock
 - EndeavourOS
+- Garuda
+- Manjaro
+- Arco
+- Artix
+- Ubuntu
+- Wubuntu
+- Kubuntu
+- Nobara
+- Ultramarine
+- RisiOS
+- Deepin
+- KDE Neon
 
 # Supported Desktop Environment  
 - KDE Plasma  
