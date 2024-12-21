@@ -1,4 +1,4 @@
-# ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓███████▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░
+ # ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓███████▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░
 # ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
 # ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░       ░▒▓█▓▒▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
 # ░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██████▓▒░ ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░      ░▒▓██████▓▒░  ░▒▓█▓▒▒▓█▓▒░░▒▓██████▓▒░  ░▒▓██████▓▒░
@@ -19,7 +19,12 @@
 
 # Main script variables
 temp_file="/tmp/screenshot.png"
-settings_file="$HOME/.config/clipboard.sh/settings.json"
+settings_dir="$HOME/.config/hyprupld"
+settings_file="$settings_dir/settings.json"
+pckmgrs_file="$settings_dir/pckmgrs.json"
+
+# Ensure configuration directory exists
+mkdir -p "$settings_dir"
 
 # Helper functions
 get_saved_value() {
@@ -31,93 +36,86 @@ save_value() {
     [[ -f "$settings_file" ]] && jq ".$1=\"$2\"" "$settings_file" > "$settings_file.tmp" && mv "$settings_file.tmp" "$settings_file" || echo "{\"$1\": \"$2\"}" > "$settings_file"
 }
 
-install_dependencies() {
-    for package in "$@"; do
-        if ! command -v "$package" &> /dev/null; then
-            echo "$package is missing. Installing..."
-            case "$package_manager" in
-                "arch") sudo pacman -S --noconfirm "$package" ;;
-                "debian") sudo apt-get install -y "$package" ;;
-                "fedora") sudo dnf install -y "$package" ;;
-                "nixos") sudo nix-env -iA nixpkgs."$package" ;;
-                "gentoo") sudo emerge --ask "$package" ;;
-                "opensuse") sudo zypper install -y "$package" ;;
-                "void") sudo xbps-install -y "$package" ;;
-                "bedrock")
-                    if command -v xbps-install &> /dev/null; then
-                        sudo xbps-install -y "$package"
-                    elif command -v zypper &> /dev/null; then
-                        sudo zypper install -y "$package"
-                    else
-                        echo "Install $package manually."
-                        exit 1
-                    fi
-                    ;;
-                *) echo "Unsupported package manager."; exit 1 ;;
-            esac
+detect_package_managers() {
+    declare -a managers=("pacman" "apt-get" "dnf" "nix-env" "emerge" "zypper" "xbps-install" "yay" "paru")
+    declare -A manager_names=(
+        ["pacman"]="arch"
+        ["apt-get"]="debian"
+        ["dnf"]="fedora"
+        ["nix-env"]="nixos"
+        ["emerge"]="gentoo"
+        ["zypper"]="opensuse"
+        ["xbps-install"]="void"
+        ["yay"]="arch_community"
+        ["paru"]="arch_community"
+    )
+
+    detected_managers=()
+    for manager in "${managers[@]}"; do
+        if command -v "$manager" &>/dev/null; then
+            detected_managers+=("${manager_names[$manager]}")
         fi
     done
+
+    # Save detected managers to JSON
+    printf '%s\n' "${detected_managers[@]}" | jq -R . | jq -s . > "$pckmgrs_file"
+    echo "${detected_managers[@]}"
 }
 
-# Detect distro and desktop environment
-distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"')
-desktop_env=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
+get_package_managers() {
+    if [[ -f "$pckmgrs_file" ]]; then
+        jq -r '.[]' "$pckmgrs_file"
+    else
+        detect_package_managers
+    fi
+}
+
+install_dependencies() {
+    required_packages=("$@")
+    package_managers=($(get_package_managers))
+    missing_packages=()
+
+    # Check for missing dependencies
+    for package in "${required_packages[@]}"; do
+        if ! command -v "$package" &>/dev/null; then
+            missing_packages+=("$package")
+        fi
+    done
+
+    if [[ ${#missing_packages[@]} -eq 0 ]]; then
+        return
+    fi
+
+    echo "The following packages are missing: ${missing_packages[*]}"
+    for manager in "${package_managers[@]}"; do
+        case "$manager" in
+            "arch") sudo pacman -S --noconfirm "${missing_packages[@]}" && return ;;
+            "debian") sudo apt-get install -y "${missing_packages[@]}" && return ;;
+            "fedora") sudo dnf install -y "${missing_packages[@]}" && return ;;
+            "nixos") sudo nix-env -iA nixpkgs."${missing_packages[@]}" && return ;;
+            "gentoo") sudo emerge --ask "${missing_packages[@]}" && return ;;
+            "opensuse") sudo zypper install -y "${missing_packages[@]}" && return ;;
+            "void") sudo xbps-install -y "${missing_packages[@]}" && return ;;
+            "arch_community")
+                if command -v yay &>/dev/null; then
+                    yay -S --noconfirm "${missing_packages[@]}" && return
+                elif command -v paru &>/dev/null; then
+                    paru -S --noconfirm "${missing_packages[@]}" && return
+                fi
+                ;;
+        esac
+    done
+
+    echo "Could not install dependencies. Install the following manually: ${missing_packages[*]}"
+    exit 1
+}
+
+# Ensure Zenity, jq, and xclip are installed
+install_dependencies "zenity" "jq" "xclip"
 
 # Detect distro and desktop environment
 distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"')
 desktop_env=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
-
-case "$distro" in
-    # Arch-based distributions
-    *"arch"*|*"Arch Linux"*|*"EndeavourOS"*|*"Garuda"*|*"Manjaro"*|*"Arco"*|*"Artix"*|*"Chakra"*|*"Parabola"*|*"Archcraft"*|*"Archlabs"*|*"Archman"*|*"Blackarch"*)
-        package_manager="arch" ;;
-
-    # Debian-based distributions
-    *"Debian"*|*"Ubuntu"*|*"Kubuntu"*|*"Xubuntu"*|*"Lubuntu"*|*"Pop!_OS"*|*"Linux Mint"*|*"Zorin"*|*"Elementary"*|*"Deepin"*|*"Neon"*|*"Devuan"*|*"Parrot"*|*"Kali"*|*"PureOS"*|*"Tails"*|*"Q4OS"*|*"Endless OS"*|*"Siduction"*|*"Raspbian"*|*"MX Linux"*)
-        package_manager="debian" ;;
-
-    # Fedora-based distributions
-    *"Fedora"*|*"Nobara"*|*"Ultramarine"*|*"RisiOS"*|*"Korora"*|*"ClearOS"*|*"Red Hat Enterprise Linux"*|*"CentOS"*|*"Rocky Linux"*|*"AlmaLinux"*)
-        package_manager="fedora" ;;
-
-    # Nix-based distributions
-    *"NixOS"*|*"Guix"* )
-        package_manager="nixos" ;;
-
-    # Gentoo-based distributions
-    *"Gentoo"*|*"Calculate Linux"*|*"Sabayon"*|*"Funtoo"*|*"Redcore"*)
-        package_manager="gentoo" ;;
-
-    # openSUSE-based distributions
-    *"Opensuse"*|*"Gecko"*|*"Openqa"*)
-        package_manager="opensuse" ;;
-
-    # Void Linux
-    *"Void"*|*"Adelie"* )
-        package_manager="void" ;;
-
-    # Bedrock Linux
-    *"Bedrock"* )
-        package_manager="bedrock" ;;
-
-    # Slackware-based distributions
-    *"Slackware"*|*"Salix"*|*"Slax"*|*"Absolute"*|*"Zenwalk"* )
-        package_manager="slackware" ;;
-
-    # Independent distributions
-    *"Clear Linux"*|*"Solus"*|*"Alpine Linux"*|*"Hyperbola"*|*"Postmarketos"*|*"Exherbo"*|*"Gobo Linux"*|*"Linux From Scratch"*|*"Dahlia"* )
-        echo "Unsupported distribution: $distro this script will not function, open an issue on the github to request support"; exit 1 ;;
-
-    # Fallback for unsupported distributions
-    *)
-        echo "Unsupported distribution: $distro"; exit 1 ;;
-esac
-
-
-# Ensure Zenity is installed
-install_dependencies "zenity"
-install_dependencies "jq"
-install_dependencies "xclip"
 
 # Handle screenshots based on the desktop environment
 case "$desktop_env" in
