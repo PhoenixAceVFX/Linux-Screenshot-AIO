@@ -19,12 +19,8 @@
 
 # Main script variables
 temp_file="/tmp/screenshot.png"
-settings_dir="$HOME/.config/hyprupld"
-settings_file="$settings_dir/settings.json"
-pckmgrs_file="$settings_dir/pckmgrs.json"
-
-# Ensure configuration directory exists
-mkdir -p "$settings_dir"
+settings_file="$HOME/.config/hyprupld/settings.json"
+pckmgrs_file="$HOME/.config/hyprupld/pckmgrs.json"
 
 # Helper functions
 get_saved_value() {

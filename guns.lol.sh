@@ -21,10 +21,7 @@ url="https://guns.lol/api/upload"
 temp_file="/tmp/screenshot.png"
 response_file="/tmp/upload.json"
 settings_file="$HOME/.config/guns/settings.json"
-pckmgrs_file="$settings_dir/pckmgrs.json"
-
-# Ensure configuration directory exists
-mkdir -p "$settings_dir"
+pckmgrs_file="$HOME/hyprupld/pckmgrs.json"
 
 # Helper functions
 get_saved_value() {
