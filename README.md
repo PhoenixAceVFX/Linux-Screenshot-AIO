@@ -29,29 +29,17 @@ If you want to keybind this remember to do `chmod +x` to it!!
 clipboard.sh - copies to clipboard  
 guns.lol.sh - for guns.lol  
 
-# Supported Distros  
-### Distros based on these *can* work but are not guarnteed
-- Arch  
-- Debian  
+# Supported Base Distros  
+### Distros based on these *should* work but are not guarnteed
+- Arch
+- Debian
 - Fedora
-- OpenSUSE
-- Gentoo
 - NixOS
+- Gentoo
+- OpenSUSE
 - Void
 - Bedrock
-- EndeavourOS
-- Garuda
-- Manjaro
-- Arco
-- Artix
-- Ubuntu
-- Wubuntu
-- Kubuntu
-- Nobara
-- Ultramarine
-- RisiOS
-- Deepin
-- KDE Neon
+- Slackware
 
 # Supported Desktop Environment  
 - KDE Plasma  
