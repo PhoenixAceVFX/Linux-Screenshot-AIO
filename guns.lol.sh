@@ -62,9 +62,9 @@ distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release | tr -d '"')
 desktop_env=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
 
 case "$distro" in
-    *"Arch"*|*"EndeavourOS"*) package_manager="arch" ;;
-    *"Debian"*) package_manager="debian" ;;
-    *"Fedora"*) package_manager="fedora" ;;
+    *"Arch"*|*"EndeavourOS"*|*"garuda"*|*"manjaro"*|*"Arco"*|*"Artix"*) package_manager="arch" ;;
+    *"Debian"*|*"Ubunutu"*|*"Wubuntu"*|*"Kubuntu"*|*"Deepin"*|*"neon"*) package_manager="debian" ;;
+    *"Fedora"*|*"Nobara"*|*"Ultramarine"*|*"RisiOS"*) package_manager="fedora" ;;
     *"NixOS"*) package_manager="nixos" ;;
     *"Gentoo"*) package_manager="gentoo" ;;
     *"openSUSE"*) package_manager="opensuse" ;;
