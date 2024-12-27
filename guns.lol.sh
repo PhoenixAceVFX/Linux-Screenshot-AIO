@@ -218,12 +218,19 @@ if [[ -z "$image_url" || "$image_url" == "null" ]]; then
     exit 1
 fi
 
+# List of URLs to choose from
+# This is if you want to use multiple domains
+# url_list=(
+#   "guns.website.com"
+#   "guns.website2.com"
+# )
+
 # Copy url to clipboard
 echo -n "$image_url" | xclip -selection clipboard
 
 # Modify clipboard contents by replacing "guns.lol" with "guns.website.com"
 # clipboard_content=$(xclip -selection clipboard -o)
-# modified_content=$(echo "$clipboard_content" | sed 's/guns.lol/guns.website.com/g')
+# modified_content=$(echo "$clipboard_content" | sed 's/guns.lol/$random_url/g')
 
 # Set the modified content back to the clipboard, uncomment if using custom url
 # echo -n "$modified_content" | xclip -selection clipboard
