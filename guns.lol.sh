@@ -228,7 +228,7 @@ fi
 # Copy url to clipboard
 echo -n "$image_url" | xclip -selection clipboard
 
-# Modify clipboard contents by replacing "guns.lol" with "guns.website.com"
+# Modify clipboard contents by replacing "xvids.lol" with "guns.website.com"
 # clipboard_content=$(xclip -selection clipboard -o)
 # modified_content=$(echo "$clipboard_content" | sed 's/xvids.lol/$random_url/g')
 
