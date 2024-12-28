@@ -276,8 +276,11 @@ fi
 # List of URLs to choose from
 # This is if you want to use multiple domains
 
+# List of URLs to choose from
+# This is if you want to use multiple domains
 # url_list=(
-#   "guns.neverlos.ing"
+#   "guns.website.com"
+#   "guns.website2.com"
 # )
 
 # Copy URL to clipboard
