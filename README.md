@@ -14,6 +14,7 @@ Run the script from your COMMAND LINE first
 
 # Launch Arguments  
 To change your settings or your auth/api key run the script with `-c`  
+To set your uploader use `-upldr`  
 
 # REMEMBER TO CHMOD!!!  
 If you want to keybind this remember to do `chmod +x` to it!!  
@@ -21,6 +22,8 @@ If you want to keybind this remember to do `chmod +x` to it!!
 # SCRIPT USE  
 clipboard.sh - copies to clipboard  
 guns.lol.sh - for guns.lol  
+e-z.gg.sh - for e-z.gg  
+hyprupld.sh - for everything  
 
 # Supported Package Managers  
 ### These are all the common package managers  
