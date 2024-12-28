@@ -47,4 +47,4 @@ guns.lol.sh - for guns.lol
 - Sway
 
 # Custom URL Support  
-This is manually done and setting it up is on you  
+Manually done but instrctions can be found on the wiki!
